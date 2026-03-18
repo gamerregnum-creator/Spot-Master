@@ -1,0 +1,10 @@
+main
+bin
+.git
+.gitignore
+.dockerignore
+Dockerfile
+docker-compose*
+README.md
+.env*
+.vscode

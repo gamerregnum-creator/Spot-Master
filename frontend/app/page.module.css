@@ -1,0 +1,140 @@
+.main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle at center, #071428 0%, #030b16 100%);
+}
+
+.header {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  background: rgba(3, 11, 22, 0.7);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+}
+
+.logo {
+  font-family: var(--font-orbitron);
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: 3px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav a {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.3s;
+}
+
+.nav a:hover {
+  color: var(--accent-cyan);
+}
+
+.hero {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 0 5%;
+  margin-top: 80px;
+  position: relative;
+  z-index: 10;
+}
+
+.heroContent {
+  flex: 1;
+  max-width: 600px;
+}
+
+.heroContent h1 {
+  font-size: 4rem;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.heroContent p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.heroActions {
+  display: flex;
+  gap: 20px;
+}
+
+.btnSecondary {
+  padding: 12px 24px;
+  color: white;
+  border: 1px solid var(--accent-cyan);
+  cursor: pointer;
+  font-family: var(--font-orbitron);
+  font-weight: 700;
+  transition: all 0.3s ease;
+  clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+}
+
+.btnSecondary:hover {
+  background: rgba(0, 212, 255, 0.1);
+  box-shadow: inset 0 0 10px rgba(0, 212, 255, 0.2);
+}
+
+.heroVisual {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.assetPlaceholder {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.2) 0%, transparent 70%);
+  position: relative;
+  border-radius: 50%;
+  animation: pulse 4s infinite ease-in-out;
+}
+
+.innerGlow {
+  position: absolute;
+  inset: 50px;
+  border: 2px solid var(--accent-cyan);
+  border-radius: 50%;
+  box-shadow: 0 0 30px var(--accent-cyan), inset 0 0 30px var(--accent-cyan);
+  opacity: 0.5;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+.starfield {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(1px 1px at 20px 30px, #fff, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 100px 150px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 250px 350px, rgba(255,255,255,0.8), rgba(0,0,0,0));
+  background-size: 550px 550px;
+  opacity: 0.3;
+  pointer-events: none;
+}
