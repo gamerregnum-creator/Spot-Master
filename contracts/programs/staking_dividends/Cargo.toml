@@ -1,0 +1,20 @@
+[package]
+name = "staking-dividends"
+version = "0.1.0"
+description = "Staking & Dividends - 88-day staking cycles, quarterly dividends, VIP monthly pool"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "staking_dividends"
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = []
+
+[dependencies]
+anchor-lang = "0.29.0"
+anchor-spl = "0.29.0"

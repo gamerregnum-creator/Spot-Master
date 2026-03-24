@@ -1,0 +1,25 @@
+[features]
+seeds = false
+skip-lint = false
+
+[programs.localnet]
+revenue_router = "C7VCZzigNT9FSNmPsMvd6ik1xbHiN7m3iN9T7p6dC5Ff"
+staking_dividends = "5xQxJSWmFTiGyhbG2vz3F5J3CDi1xsqC3DNXf2Grbxwe"
+referral_system = "XsSq3HYLFFpgirvEDEsvQFJmeTN3oU5FCtZDfJnsg5n"
+regna_bridge = "6du8XnSUWEmTeNnGSTKKD7qfGu1CohusrwDXCbN5gntX"
+
+[programs.devnet]
+revenue_router = "C7VCZzigNT9FSNmPsMvd6ik1xbHiN7m3iN9T7p6dC5Ff"
+staking_dividends = "5xQxJSWmFTiGyhbG2vz3F5J3CDi1xsqC3DNXf2Grbxwe"
+referral_system = "XsSq3HYLFFpgirvEDEsvQFJmeTN3oU5FCtZDfJnsg5n"
+regna_bridge = "6du8XnSUWEmTeNnGSTKKD7qfGu1CohusrwDXCbN5gntX"
+
+[registry]
+url = "https://api.apr.dev"
+
+[provider]
+cluster = "Localnet"
+wallet = "~/.config/solana/id.json"
+
+[scripts]
+test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"

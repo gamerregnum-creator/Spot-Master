@@ -1,0 +1,25 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Frontend (Next.js)",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["node_modules/next/dist/bin/next", "dev"],
+      "cwd": "frontend",
+      "port": 3000,
+      "autoPort": true
+    },
+    {
+      "name": "Backend (Go / Fiber)",
+      "runtimeExecutable": "go",
+      "runtimeArgs": ["run", "./cmd/api/main.go"],
+      "cwd": "backend",
+      "port": 8081,
+      "env": {
+        "DB_URL": "postgresql://postgres:SpotMasterDataBase@2026!@db.yomvkafyuwmfholiobbp.supabase.co:5432/postgres",
+        "PORT": "8081",
+        "ENV": "development"
+      }
+    }
+  ]
+}

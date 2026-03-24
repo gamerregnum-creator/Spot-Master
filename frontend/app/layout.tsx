@@ -19,7 +19,10 @@ export const metadata: Metadata = {
   description: "Hybrid physical/digital gaming ecosystem powered by Solana.",
 };
 
+import { ClerkProvider } from "@clerk/nextjs";
 import { LanguageProvider } from "@/lib/i18n/context";
+import { WalletContextProvider } from "@/components/providers/WalletContextProvider";
+import UserSync from "@/components/auth/UserSync";
 
 export default function RootLayout({
   children,
@@ -27,12 +30,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${orbitron.variable} ${saira.variable}`}>
-        <LanguageProvider>
-          {children}
-        </LanguageProvider>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en" suppressHydrationWarning>
+        <body className={`${orbitron.variable} ${saira.variable}`}>
+          <LanguageProvider>
+            <WalletContextProvider>
+              <UserSync />
+              {children}
+            </WalletContextProvider>
+          </LanguageProvider>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

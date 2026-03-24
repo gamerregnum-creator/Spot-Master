@@ -12,7 +12,7 @@
 
 ## Reglas de Arquitectura
 1.  **Backend**: Seguir patrón modular (`cmd/`, `internal/`, `pkg/`) en Go Fiber.
-2.  **Frontend**: Usar componentes de `design_system.md`. Priorizar animaciones scroll-driven con Framer Motion o Scroll-Stop Canvas.
+2.  **Distribución de Fondos**: Prohibido modificar el flujo core detallado en [PROJECT_MEMORY.md](file:///c:/Users/Megav/Agentes/Spot-Master/PROJECT_MEMORY.md). Solo ajustes de porcentajes permitidos.
 3.  **UI/UX**: Estética Cyberpunk/Premium. Colores base: `#030b16` (Deep), `#00d4ff` (Cyan), `#ff2d78` (Pink).
 4.  **Seguridad**: Validar siempre con `SecurityAuditor` antes de desplegar contratos Solana.
 

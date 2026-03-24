@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useLanguage } from '@/lib/i18n/context';
+import { WalletButton } from '@/components/ui/WalletButton';
 
 export default function DashboardLayout({
   children,
@@ -14,7 +15,7 @@ export default function DashboardLayout({
 
   const links = [
     { href: '/dashboard', label: t('OVERVIEW') },
-    { href: '/dashboard/staking', label: t('STAKING_DIVIDENDS') },
+    { href: '/dashboard/staking', label: t('STAKING') },
   ];
 
   const langs = [
@@ -51,31 +52,57 @@ export default function DashboardLayout({
           ))}
         </nav>
 
-        <div style={{ marginTop: 'auto', padding: '20px 10px' }}>
-            <div style={{ display: 'flex', gap: '5px', marginBottom: '20px', justifyContent: 'center', flexWrap: 'wrap' }}>
-                {langs.map((l) => (
-                    <button
-                        key={l.code}
-                        onClick={() => setLocale(l.code as any)}
-                        style={{
-                            padding: '5px 8px',
-                            fontSize: '0.6rem',
-                            background: locale === l.code ? 'var(--accent-cyan)' : 'rgba(255,255,255,0.05)',
-                            color: locale === l.code ? '#000' : '#fff',
-                            border: 'none',
-                            borderRadius: '4px',
-                            cursor: 'pointer',
-                            fontWeight: 'bold',
-                            transition: 'all 0.2s'
-                        }}
-                    >
-                        {l.label}
-                    </button>
-                ))}
+        <div style={{ marginTop: 'auto', padding: '20px 10px 40px 10px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            {/* Language Selection Grid (3-2) */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '25px', width: '100%' }}>
+                {/* Row 1: EN, ES, IT */}
+                <div style={{ display: 'flex', gap: '8px', justifyContent: 'center' }}>
+                    {langs.slice(0, 3).map((l) => (
+                        <button
+                            key={l.code}
+                            onClick={() => setLocale(l.code as any)}
+                            style={{
+                                padding: '8px 12px',
+                                fontSize: '0.8rem',
+                                background: locale === l.code ? 'var(--accent-cyan)' : 'rgba(255,255,255,0.05)',
+                                color: locale === l.code ? '#000' : '#fff',
+                                border: 'none',
+                                borderRadius: '4px',
+                                cursor: 'pointer',
+                                fontWeight: 'bold',
+                                transition: 'all 0.2s',
+                                minWidth: '45px'
+                            }}
+                        >
+                            {l.label}
+                        </button>
+                    ))}
+                </div>
+                {/* Row 2: JP, ZH */}
+                <div style={{ display: 'flex', gap: '8px', justifyContent: 'center' }}>
+                    {langs.slice(3).map((l) => (
+                        <button
+                            key={l.code}
+                            onClick={() => setLocale(l.code as any)}
+                            style={{
+                                padding: '8px 12px',
+                                fontSize: '0.8rem',
+                                background: locale === l.code ? 'var(--accent-cyan)' : 'rgba(255,255,255,0.05)',
+                                color: locale === l.code ? '#000' : '#fff',
+                                border: 'none',
+                                borderRadius: '4px',
+                                cursor: 'pointer',
+                                fontWeight: 'bold',
+                                transition: 'all 0.2s',
+                                minWidth: '45px'
+                            }}
+                        >
+                            {l.label}
+                        </button>
+                    ))}
+                </div>
             </div>
-            <button className="btn-premium" style={{width: '100%', fontSize: '0.7rem'}}>
-                {t('DISCONNECT')}
-            </button>
+            <WalletButton />
         </div>
       </aside>
       <main className="dashboard-content">

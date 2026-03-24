@@ -1,0 +1,25 @@
+# Environment & secrets
+backend/.env
+frontend/.env.local
+.env
+.env.local
+.env*.local
+
+# Claude Code local settings (may contain API keys/tokens)
+.claude/settings.local.json
+
+# Node
+node_modules/
+frontend/.next/
+frontend/out/
+
+# Go build
+backend/build_log.txt
+
+# Rust / Anchor build artifacts
+contracts/target/
+contracts/.anchor/
+
+# OS
+.DS_Store
+Thumbs.db

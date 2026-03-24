@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "skills": {
+    "clean-code-pro": {
+      "source": "jung217/clean-code-pro",
+      "sourceType": "github",
+      "computedHash": "fb051270547229f9143c3150e542ca43cf9245d84624f55d59a27dc217991c1a"
+    },
+    "performance": {
+      "source": "addyosmani/web-quality-skills",
+      "sourceType": "github",
+      "computedHash": "9e0e29b7919bacfd2d0caae0f841fa53ae3d7b7427d27f4fdbacc76643d7d138"
+    },
+    "skill-creator": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "computedHash": "57f470f512f45bdac598e302bc72fd62bf2b649fc7fad032efe97720149cde4d"
+    },
+    "smart-contract-security": {
+      "source": "pluginagentmarketplace/custom-plugin-blockchain",
+      "sourceType": "github",
+      "computedHash": "78e8282a5671734840c921de27ebdee1d3d87ff16bc1f64ca6aac181b597ba7c"
+    }
+  }
+}

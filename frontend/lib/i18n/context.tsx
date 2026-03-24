@@ -31,7 +31,9 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   };
 
   const t = (key: TranslationKey): string => {
-    return translations[locale][key] || translations.en[key] || key;
+    const activeTranslations = translations[locale] as Record<string, string>;
+    const enTranslations = translations.en as Record<string, string>;
+    return activeTranslations[key] || enTranslations[key] || key;
   };
 
   return (
